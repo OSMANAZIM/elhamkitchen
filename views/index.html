@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Restaurant Name</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="restaurant-name">
+      <h1>Elham's Kitchen</h1>
+    </div>
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a class="Header-names" href="/">Home</a></li>
+          <li><a class="Header-names" href="/menu">Menu</a></li>
+          <li><a class="Header-names" href="/orderonline">Order Online</a></li>
+          <li><a class="Header-names" href="#" onclick="showOnlineOrderPopup();">Reservation</a></li>
+          <li><a class="Header-names" href="/gallary">Gallary</a></li>
+          <li><a class="Header-names" href="/contact">Contacts</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="album-container">
+    <div class="sliding-album">
+      <div class="album-item">
+        <img src="../images/image1.jpg" alt="Image 1">
+        <div><p class="caption"> Dining in..
+        </p></div>
+      </div>
+      <div class="album-item">
+        <img src="../images/image2.jpg" alt="Image 2">
+        <div><p class="caption"> Catering..
+        </p></div>
+      </div>
+      <div class="album-item">
+        <img src="../images/image3.jpg" alt="Image 3">
+        <div><p class="caption"> Special Events..
+        </p></div>
+      </div>
+      <div class="album-item">
+        <img src="../images/image4.jpg" alt="Image 4">
+        <div><p class="caption"> Online Delivery..
+        </p></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="online-order-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" id="close-online-order-popup" onclick="hideOnlineOrderPopup()">&times;</span>
+        <h2>For Dine-in and Reservations</h2>
+        <p>Please call 003-279-3258</p>
+      </div>
+    </div>
+
+
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 Elham's Kitchen. All rights reserved.</p>
+      <p>Call: 003-279-3258</p>
+    </div>
+  </footer>
+
+
+
+  <script>
+  const albumContainer = document.querySelector('.album-container');
+  const album = document.querySelector('.sliding-album');
+  const albumItems = document.querySelectorAll('.album-item');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    album.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % albumItems.length;
+    showImage(currentIndex);
+  }
+
+  // Function to show the online order popup
+  function showOnlineOrderPopup() {
+    // Get a reference to the popup element
+    const onlineOrderPopup = document.getElementById('online-order-popup');
+
+    // Display the popup
+    onlineOrderPopup.style.display = 'block';
+
+    // Prevent the default link behavior (navigation)
+    return false;
+  }
+
+  // Function to hide the online order popup
+  function hideOnlineOrderPopup() {
+    // Get a reference to the popup element
+    const onlineOrderPopup = document.getElementById('online-order-popup');
+
+    // Hide the popup
+    onlineOrderPopup.style.display = 'none';
+  }
+
+  setInterval(nextImage, 3000);
+
+  </script>
+</body>
+</html>
