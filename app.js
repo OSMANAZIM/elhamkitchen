@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.get("/", function(req, res) {
-  const indexPath = path.join(__dirname, "views", "index.html");
+  const indexPath = path.join(__dirname, "index.html");
   res.sendFile(indexPath);
 });
 
