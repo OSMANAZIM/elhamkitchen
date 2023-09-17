@@ -15,22 +15,22 @@ app.get("/", function(req, res) {
 });
 
 app.get("/menu", function(req, res) {
-  const indexPath = path.join(__dirname, "views", "menu.html");
+  const indexPath = path.join(__dirname, "menu.html");
   res.sendFile(indexPath);
 });
 
 app.get("/orderonline", function(req, res) {
-  const indexPath = path.join(__dirname, "views", "orderonline.html");
+  const indexPath = path.join(__dirname,  "orderonline.html");
   res.sendFile(indexPath);
 });
 
 app.get("/contact", function(req, res) {
-  const indexPath = path.join(__dirname, "views", "contact.html");
+  const indexPath = path.join(__dirname,  "contact.html");
   res.sendFile(indexPath);
 });
 
 app.get("/gallary", function(req, res) {
-  const indexPath = path.join(__dirname, "views", "gallary.html");
+  const indexPath = path.join(__dirname, "gallary.html");
   res.sendFile(indexPath);
 });
 
