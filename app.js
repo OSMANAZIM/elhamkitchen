@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "styles.css")));
 
 // Serve static files from the "images" directory
 app.use("/images", express.static(path.join(__dirname, "images")));
